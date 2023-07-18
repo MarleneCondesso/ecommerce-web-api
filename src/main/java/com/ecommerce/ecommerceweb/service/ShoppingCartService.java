@@ -60,7 +60,7 @@ public class ShoppingCartService {
 
         Optional<ShoppingCart> shoppingCart = shoppingCartRepository.findById(id);
 
-        if(shoppingCart.isEmpty()) {
+        if(!shoppingCart.isPresent()) {
             throw new CustomException("This shopping cart id is not valid!" + id);
         }
 
